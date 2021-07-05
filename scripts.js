@@ -45,7 +45,7 @@ dropdown.button.addEventListener('click', e=>{
 });
 
 window.addEventListener('resize', e=>{
-	if (!dropdown.hidden){
+	if (!dropdown.hidden && window.innerWidth > 780){
 		dropdown.hide();
 	}
 });
