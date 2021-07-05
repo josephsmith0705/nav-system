@@ -42,9 +42,13 @@ dropdown.button.addEventListener('click', e=>{
     } else {
 		dropdown.hide();
     }
-})
+});
 
-window.addEventListener('resize', dropdown.hide());
+window.addEventListener('resize', e=>{
+	if (!dropdown.hidden){
+		dropdown.hide();
+	}
+});
 
 
 
