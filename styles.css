@@ -114,7 +114,7 @@ body {
 
 #contact-links{
     position: absolute;
-    bottom: 20px;
+    bottom: 25px;
     left: 0;
     width: 100%;
 }
@@ -141,6 +141,9 @@ body {
     .navlink:hover, #contact-links a:hover{
         color: var(--main-white);
     }
+	#contact-links{
+		bottom: 20px;
+	}
     #contact-links a{
         font-size: 25px;
     }
