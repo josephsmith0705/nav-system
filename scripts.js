@@ -16,33 +16,35 @@ function addMouseOver(elements){
 
 addMouseOver(document.querySelectorAll('.navlink'));
 
-function showDropdown(){
-	dropdownButton.style.transitionDuration = '0.2s';
-	dropdownButton.style.transform = 'rotate(90deg)';
-	dropdownMenu.style.opacity = '1';
-	dropdownMenu.style.animation = 'drop 0.5s ease';
-	hidden = false;	
-}
+const dropdown = {
+	button: document.querySelector('#menu-button'),
+	menu: document.querySelector('#dropdown-navbar'),
+	hidden: true,
+	show: function(){
+		this.button.style.transitionDuration = '0.2s';
+		this.button.style.transform = 'rotate(90deg)';
+		this.menu.style.opacity = '1';
+		this.menu.style.animation = 'drop 0.5s ease';
+		this.hidden = false;
+	},
+	hide: function(){
+		this.button.style.transitionDuration = '0.2s';
+		this.button.style.transform = 'rotate(0deg)';
+		this.menu.style.animation = 'fold 0.2s ease-in-out';
+		setTimeout(() => {this.menu.style.opacity = '0';}, 190);
+		this.hidden = true;
+	}
+};
 
-function hideDropdown(){
-	dropdownButton.style.transitionDuration = '0.2s';
-	dropdownButton.style.transform = 'rotate(0deg)';
-	dropdownMenu.style.animation = 'fold 0.2s ease-in-out';
-	setTimeout(() => {dropdownMenu.style.opacity = '0';}, 190);
-	hidden = true;
-}
-
-window.addEventListener('resize', hideDropdown);
-
-const dropdownButton = document.querySelector('#menu-button');
-const dropdownMenu = document.querySelector('#dropdown-navbar');
-let hidden = true;
-dropdownButton.addEventListener('click', e=>{
-    if (hidden){
-		showDropdown();
+dropdown.button.addEventListener('click', e=>{
+    if (dropdown.hidden){
+		dropdown.show();
     } else {
-		hideDropdown();
+		dropdown.hide();
     }
 })
+
+window.addEventListener('resize', dropdown.hide());
+
 
 
