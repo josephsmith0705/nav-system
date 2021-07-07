@@ -15,6 +15,7 @@ function addMouseOver(elements){
 }
 
 addMouseOver(document.querySelectorAll('.navlink'));
+addMouseOver(document.querySelectorAll('.contactlink'));
 
 const dropdown = {
 	button: document.querySelector('#menu-button'),
