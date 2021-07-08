@@ -220,5 +220,5 @@ body {
 
 @keyframes fadein{
     from {opacity: 0;}
-    to {opacity: 100;}
+    to {opacity: 1;}
 }
