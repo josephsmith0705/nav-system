@@ -22,7 +22,7 @@ function addMouseOver(elements){
 	for (i=0; i<elements.length;i++){
 		if (elements[i].classList.contains('current-page')){
 			elements[i].style.pointerEvents = 'none'; //Deactivate link for current page
-		} else {
+		} else if (!elements[i].classList.contains('subtitle-trigger')){
 			elements[i].addEventListener('mouseover', e=>{
 				e.target.style.animation = 'hover 0.3s linear';
 				e.target.style.color = 'var(--dark-accent)';
@@ -68,6 +68,7 @@ for (i=0; i<subtitleTrigger.length; i++){
 const subtitleTrigger = document.querySelectorAll('.subtitle-trigger');
 const navlinkSubtitle = document.querySelectorAll('.navlink-subtitle');
 subtitleTrigger[0].addEventListener('mouseover', e=>{
+
 	navlinkSubtitle[0].style.opacity = '1';
 });
 subtitleTrigger[0].addEventListener('mouseout', e=>{
