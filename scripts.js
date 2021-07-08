@@ -1,22 +1,3 @@
-function addMouseOver(elements){
-	for (i=0; i<elements.length;i++){
-		elements[i].addEventListener('mouseover', e=>{
-			e.target.style.animation = 'hover 0.3s linear';
-			e.target.style.color = 'var(--dark-accent)';
-		})
-		elements[i].addEventListener('mouseout', e=>{
-			e.target.style.animation = 'unhover 0.15s linear';
-			setTimeout(() => {e.target.style.color = 'var(--main-white)';}, 140);
-		})
-		elements[i].addEventListener('click', e=>{
-			e.target.style.transform = scale(0.2);
-		})
-	}
-}
-
-addMouseOver(document.querySelectorAll('.navlink'));
-addMouseOver(document.querySelectorAll('.contactlink'));
-
 const dropdown = {
 	button: document.querySelector('#menu-button'),
 	menu: document.querySelector('#dropdown-navbar'),
@@ -37,6 +18,22 @@ const dropdown = {
 	}
 };
 
+function addMouseOver(elements){
+	for (i=0; i<elements.length;i++){
+		elements[i].addEventListener('mouseover', e=>{
+			e.target.style.animation = 'hover 0.3s linear';
+			e.target.style.color = 'var(--dark-accent)';
+		})
+		elements[i].addEventListener('mouseout', e=>{
+			e.target.style.animation = 'unhover 0.15s linear';
+			setTimeout(() => {e.target.style.color = 'var(--main-white)';}, 140);
+		})
+		elements[i].addEventListener('click', e=>{
+			e.target.style.transform = scale(0.2);
+		})
+	}
+}
+
 dropdown.button.addEventListener('click', e=>{
     if (dropdown.hidden){
 		dropdown.show();
@@ -50,6 +47,9 @@ window.addEventListener('resize', e=>{
 		dropdown.hide();
 	}
 });
+
+addMouseOver(document.querySelectorAll('.navlink'));
+addMouseOver(document.querySelectorAll('.contactlink'));
 
 
 
