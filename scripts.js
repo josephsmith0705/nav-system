@@ -68,12 +68,25 @@ for (i=0; i<subtitleTrigger.length; i++){
 const subtitleTrigger = document.querySelectorAll('.subtitle-trigger');
 const navlinkSubtitle = document.querySelectorAll('.navlink-subtitle');
 subtitleTrigger[0].addEventListener('mouseover', e=>{
-
 	navlinkSubtitle[0].style.opacity = '1';
 });
 subtitleTrigger[0].addEventListener('mouseout', e=>{
 	navlinkSubtitle[0].style.opacity = '0';
 });
+
+const mainImg = document.querySelector('#main-img');
+if (mainImg){
+	mainImg.addEventListener('mouseover', e=>{
+	mainImg.style.transitionDuration = '0.5s';
+	mainImg.style.transform = 'scale(1.05)';
+	mainImg.style.cursor = 'pointer';
+	})
+	mainImg.addEventListener('mouseout', e=>{
+		mainImg.style.transitionDuration = '0.5s';
+		mainImg.style.transform = 'scale(1)';
+	})
+}
+
 
 addMouseOver(document.querySelectorAll('.navlink'));
 addMouseOver(document.querySelectorAll('.contactlink'));

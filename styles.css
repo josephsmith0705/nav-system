@@ -20,7 +20,6 @@
     --alt-blue: #96BAD9;
 }
 
-
 body {
     background: var(--main-black);
     background-image: url("img/icon-small.png");
@@ -39,10 +38,12 @@ body {
 .dd-navlink{
     text-decoration: none;
     color: var(--main-white);
+    width: fit-content;
     display: block;
     font-size: 20px;
-    margin-bottom: 20px;
-    text-shadow: 0px 0px 3px white;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+    text-shadow: 0px 0px 1px white;
 }
 
 .navlink{
@@ -53,7 +54,7 @@ body {
     width: 19vw;
     padding: 0;
     max-width: 225px;
-    height: 69px;
+    max-height: 69px;
     line-height: 69px;
     margin: 0;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.349);
@@ -86,17 +87,12 @@ body {
     top: -50px;
     z-index: 0;
     color: var(--main-white) !important;
-    
 }
 
 /*
 .navlink:hover, #contact-links a:hover{
     color: var(--dark-accent);
 }*/
-
-#bg-img{
-    width: 300px;
-}
 
 #header-img{
     position: relative;
@@ -113,10 +109,8 @@ body {
     display: none;
     background: transparent;
     padding: 4px 6px 2px;
-    margin: 0;
     border: 0;
-    border-radius: 0;
-    float: left;
+    z-index: 2;
 }
 
 #menu-button{
@@ -128,32 +122,49 @@ body {
 
 #dropdown-navbar{
     position: fixed;
-    left: 17px;
+    left: 12px;
     top: 75px;
     padding: 5px 10px 10px 5px;
     opacity: 0;
+    z-index: 2;
 }
 
 #navbar{
     width: 100%;
-    margin: 0;
     position: fixed;
-    top: 5px;
+    z-index: 2;
+}
+
+#main-container{
+    position: absolute;
     left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+#main-img{
+    position: relative;
+    top: 15%;
+    bottom: 15%;
+    height: 70%;
+    margin: auto;
 }
 
 #contact-links{
     position: absolute;
-    bottom: 25px;
-    left: 0;
+    bottom: 0;
     width: 100%;
+    z-index: 2;
 }
 
 #contact-links a{
     display: inline-block;
+    position: relative;
     text-decoration: none;
     color: var(--main-white);
     font-size: 30px;
+    line-height: 69px;
     margin: 0 2%;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.349);
 }
@@ -177,6 +188,9 @@ body {
     #contact-links a{
         font-size: 25px;
     }
+    #main-img{
+        top: 9.5%;
+    }
 }
 @media screen and (max-width: 300px){
     #header-img{
@@ -197,15 +211,15 @@ body {
 }
 
 @keyframes drop{
-    0% {left: -85px;}
-    40% {left: 19px;}
-    60% {left: 15px;}
-    100% {left: 17px;}
+    0% {left: -100px;}
+    40% {left: 14px;}
+    60% {left: 10px;}
+    100% {left: 12px;}
 }
 
 @keyframes fold{
-    from {left: 17px;}
-    to {left: -85px;}
+    from {left: 12px;}
+    to {left: -100px;}
 }
 
 @keyframes hover{
