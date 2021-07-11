@@ -43,7 +43,7 @@ body {
     font-size: 20px;
     margin-bottom: 10px;
     padding: 5px 5px;
-    text-shadow: 0px 0px 1px white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .navlink{
@@ -57,7 +57,7 @@ body {
     max-height: 69px;
     line-height: 69px;
     margin: 0;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.349);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .current-page{
@@ -139,6 +139,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
     height: 100%;
     z-index: 1;
 }
@@ -146,9 +147,8 @@ body {
 #main-img{
     position: relative;
     top: 15%;
-    bottom: 15%;
     height: 70%;
-    margin: auto;
+    animation: focusin 1s ease;
 }
 
 #contact-links{
@@ -166,7 +166,7 @@ body {
     font-size: 30px;
     line-height: 69px;
     margin: 0 2%;
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.349);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 @media screen and (max-width: 780px){
@@ -179,22 +179,55 @@ body {
     #header-img{
         display: inline;
     }
-    .navlink:hover, #contact-links a:hover{
-        color: var(--main-white);
-    }
-	#contact-links{
-		bottom: 20px;
-	}
     #contact-links a{
         font-size: 25px;
     }
+}
+
+@media screen and (max-height: 700px), (max-width: 450px) and (min-height: 725px){
     #main-img{
-        top: 9.5%;
+        top: 22.5%;
+        height: 55%;
     }
 }
-@media screen and (max-width: 300px){
+
+@media screen and (max-width: 370px){
     #header-img{
-        display: none;
+        top: 24.25px;
+        height: 23px;
+    }
+    #main-img{
+        top: 22.5%;
+        height: 55%;
+    }
+}
+
+@media screen and (max-width: 280px){
+    #header-img{
+        position: fixed;
+        content: url("img/icon-small.png");
+        filter: invert(1);
+        left: auto;
+        right: 20px;
+    }
+    #main-img{
+        top: 25%;
+        height: 50%;
+    }
+    #contact-links a{
+        margin: 0 1%;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 200px){
+    #main-img{
+        top: 30%;
+        height: 40%;
+    }
+    #contact-links a{
+        margin: 0 1%;
+        font-size: 20px;
     }
 }
 
@@ -235,4 +268,9 @@ body {
 @keyframes fadein{
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+@keyframes focusin{
+    from {filter: blur(2px);}
+    to {filter: blur(0);}
 }

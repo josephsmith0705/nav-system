@@ -10,9 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <style>
+        .fb-page{
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
     <body>
-        <!--<img src="img/icon-small.png" id="bg-img">-->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0" nonce="jVa1HkTy"></script>
         <header>
             <a href="#">
                 <img src="img/logo.png" id="header-img">
@@ -38,14 +45,23 @@
                 <a href="contact.html" class="navlink">contact</a>  
             </nav>
         </header>
-    
+    <!--
+        <div id="events-container">
+            <div class="fb-page" data-href="https://www.facebook.com/blighttownuk/" data-tabs="events" 
+            data-width="500" data-height="900" data-small-header="false" data-adapt-container-width="true" 
+            data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/blighttownuk/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/blighttownuk/">Blight Town</a>
+                </blockquote>
+            </div>
+        </div>
+-->
         <footer id="contact-links">
             <a href="https://facebook.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-facebook-square" aria-label="facebook"></a>
             <a href="https://twitter.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-twitter-square" aria-label="twitter"></a>
             <a href="https://instagram.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-instagram" aria-label="instagram"></a>
             <a href="https://open.spotify.com/artist/3ithyOukGfKGBz6zc3UAV0?si=Sz7dd7iiTb2ExsnIVTefmA&nd=1" target="_blank" rel="noopener" class="contactlink fab fa-spotify" aria-label="spotify"></a>
             <a href="https://www.youtube.com/channel/UCK7o-hJTYzGKCC784UfzMMA/featured" target="_blank" rel="noopener" class="contactlink fab fa-youtube" aria-label="youtube"></a>
-            
         </footer>
         <script src="scripts.js"></script>
     </body>

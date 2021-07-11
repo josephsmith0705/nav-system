@@ -31,9 +31,11 @@ function addMouseOver(elements){
 				e.target.style.animation = 'unhover 0.15s linear';
 				setTimeout(() => {e.target.style.color = 'var(--main-white)';}, 140);
 			})
-			/*elements[i].addEventListener('click', e=>{
-				e.target.style.transform = scale(0.2);
-			})*/
+			elements[i].addEventListener('click', e=>{
+				e.target.style.transitionDuration = '0.25s';
+				e.target.style.transform = 'scale(0.9)';
+				e.target.style.color = 'var(--main-white)';
+			})
 		}
 	}
 }
@@ -46,24 +48,30 @@ dropdown.button.addEventListener('click', e=>{
     }
 });
 
+const mainImg = document.querySelector('#main-img');
+if (mainImg && window.innerWidth > 780){
+	mainImg.addEventListener('mouseover', e=>{
+		mainImg.style.transitionDuration = '0.5s';
+		mainImg.style.transform = 'scale(1.05)';
+		mainImg.style.cursor = 'pointer';
+	})
+	mainImg.addEventListener('mouseout', e=>{
+		mainImg.style.transform = 'scale(1)';
+	})
+	mainImg.addEventListener('click', e=>{
+		mainImg.style.transform = 'scale(1.03)';
+		setTimeout(() => {mainImg.style.transform = 'scale(1)';}, 250);
+	})
+}
+
 window.addEventListener('resize', e=>{
 	if (!dropdown.hidden && window.innerWidth > 780){
 		dropdown.hide();
 	}
+	/*if (window.innerWidth < mainImg.width){
+		mainImg.style.height = mainImg.height / 2;
+	}*/
 });
-
-/* Could be used to automatically hide/show subtitles regardless of quantity
-const subtitleTrigger = document.querySelectorAll('.subtitle-trigger');
-const navlinkSubtitle = document.querySelectorAll('.navlink-subtitle');
-for (i=0; i<subtitleTrigger.length; i++){
-	subtitleTrigger[i].addEventListener('mouseover', e=>{
-		e.target.style.opacity = '1';
-		e.target.style.animation = 'fadein 0.3s linear';
-	})
-	subtitleTrigger[i].addEventListener('mouseout', e=>{
-		setTimeout(() => {e.target.style.animation = 'fadein 0.3s reverse';}, 290);
-	})
-}*/
 
 const subtitleTrigger = document.querySelectorAll('.subtitle-trigger');
 const navlinkSubtitle = document.querySelectorAll('.navlink-subtitle');
@@ -74,22 +82,6 @@ subtitleTrigger[0].addEventListener('mouseout', e=>{
 	navlinkSubtitle[0].style.opacity = '0';
 });
 
-const mainImg = document.querySelector('#main-img');
-if (mainImg){
-	mainImg.addEventListener('mouseover', e=>{
-	mainImg.style.transitionDuration = '0.5s';
-	mainImg.style.transform = 'scale(1.05)';
-	mainImg.style.cursor = 'pointer';
-	})
-	mainImg.addEventListener('mouseout', e=>{
-		mainImg.style.transitionDuration = '0.5s';
-		mainImg.style.transform = 'scale(1)';
-	})
-}
-
-
 addMouseOver(document.querySelectorAll('.navlink'));
 addMouseOver(document.querySelectorAll('.contactlink'));
-
-
 

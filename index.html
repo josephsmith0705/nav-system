@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blight Town promotional site">
+    <meta name="keywords" content="Music, Band, Rock">
     <title>Home - Blight Town</title>
 	<link rel="icon" type="image/png" href="img/icon-small.png">
     <link rel="stylesheet" href="styles.css" />
@@ -13,8 +15,8 @@
 </head>
     <body>
         <header>
-            <a href="#">
-                <img src="img/logo.png" id="header-img">
+            <a href="index.html" aria-label="blight town">
+                <img src="img/logo.png" alt="" id="header-img">
             </a>
             <button id="nav-toggle" aria-label="toggle navigation menu">
             <div id="menu-button" class="fa fa-bars"></div></button>
@@ -38,9 +40,11 @@
             </nav>
         </header>
     
-        <div id="main-container">
-            <img src="img/eclipse.jpg" id="main-img">
-        </div>
+        <main id="main-container">
+            <a href="https://youtu.be/-wcA0e3P1gE?list=PLbOwT_h-dQs1t50oWpzg2foJ4-xP-oWZM" target="_blank" rel="noopener" aria-label="self-titled EP">
+                <img src="img/eclipse.jpg" alt="" id="main-img">
+            </a>
+        </main>
 
         <footer id="contact-links">
             <a href="https://facebook.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-facebook-square" aria-label="facebook"></a>
@@ -48,7 +52,6 @@
             <a href="https://instagram.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-instagram" aria-label="instagram"></a>
             <a href="https://open.spotify.com/artist/3ithyOukGfKGBz6zc3UAV0?si=Sz7dd7iiTb2ExsnIVTefmA&nd=1" target="_blank" rel="noopener" class="contactlink fab fa-spotify" aria-label="spotify"></a>
             <a href="https://www.youtube.com/channel/UCK7o-hJTYzGKCC784UfzMMA/featured" target="_blank" rel="noopener" class="contactlink fab fa-youtube" aria-label="youtube"></a>
-            
         </footer>
         <script src="scripts.js"></script>
     </body>
