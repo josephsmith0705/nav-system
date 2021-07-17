@@ -11,8 +11,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <style>
+        #events-container{
+            width: 50%;
+            margin: auto;
+            position: relative;
+            top: 70px;
+            height: 500px;
+            min-width: 320px;
+        }
         .fb-page{
-            color: red;
             display: none;
         }
     </style>
@@ -30,7 +37,6 @@
                 <a href="index.html" class="dd-navlink">home</a>
                 <a href="https://slugapparel.com/collections/blighttown-collection" target="_blank" rel="noopener" class="dd-navlink">merch</a>
                 <a href="shows.html" class="dd-navlink current-page">shows</a> 
-                <a href="music.html" class="dd-navlink">music</a>  
                 <a href="contact.html" class="dd-navlink">contact</a>  
             </nav>
             <nav id="navbar">
@@ -41,21 +47,20 @@
                     </div>
                 </a>
                 <a href="shows.html" class="navlink current-page">shows</a>  
-                <a href="music.html" class="navlink">music</a> 
                 <a href="contact.html" class="navlink">contact</a>  
             </nav>
         </header>
-    <!--
+    
         <div id="events-container">
-            <div class="fb-page" data-href="https://www.facebook.com/blighttownuk/" data-tabs="events" 
-            data-width="500" data-height="900" data-small-header="false" data-adapt-container-width="true" 
+            <div id="events" class="fb-page" data-href="https://www.facebook.com/blighttownuk/" data-tabs="events" 
+            data-width="500" data-height="1000" data-small-header="false" data-adapt-container-width="true"
             data-hide-cover="false" data-show-facepile="true">
                 <blockquote cite="https://www.facebook.com/blighttownuk/" class="fb-xfbml-parse-ignore">
                     <a href="https://www.facebook.com/blighttownuk/">Blight Town</a>
                 </blockquote>
             </div>
         </div>
--->
+
         <footer id="contact-links">
             <a href="https://facebook.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-facebook-square" aria-label="facebook"></a>
             <a href="https://twitter.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-twitter-square" aria-label="twitter"></a>
@@ -64,6 +69,12 @@
             <a href="https://www.youtube.com/channel/UCK7o-hJTYzGKCC784UfzMMA/featured" target="_blank" rel="noopener" class="contactlink fab fa-youtube" aria-label="youtube"></a>
         </footer>
         <script src="scripts.js"></script>
+        <script>
+            const events = document.getElementById('events');
+            events.setAttribute("data-height", String(window.innerHeight - 170));
+            events.setAttribute("data-width", String(document.getElementById('events-container').clientWidth));
+            window.addEventListener('resize', e=>{document.location.href = document.location.href;});
+        </script>
     </body>
 </html>
   
