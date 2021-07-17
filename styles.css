@@ -122,11 +122,13 @@ body {
 
 #dropdown-navbar{
     position: fixed;
-    left: 12px;
     top: 75px;
-    padding: 5px 10px 10px 5px;
+    padding: 5px 10px 0px 17px;
     opacity: 0;
     z-index: 2;
+    background: black;
+    width: 100%;
+    transform-origin: top center;
 }
 
 #navbar{
@@ -243,16 +245,22 @@ body {
     100% {background-color: var(--main-black);}
 }
 
+/*@keyframes drop{
+    0% {top: -100px;}
+    40% {top: 76px;}
+    60% {top: 74px;}
+    100% {top: 75px;}
+}*/
+
 @keyframes drop{
-    0% {left: -100px;}
-    40% {left: 14px;}
-    60% {left: 10px;}
-    100% {left: 12px;}
+    0% {transform: scaleY(0)}
+
+    100% {transform: scaleY(1)}
 }
 
 @keyframes fold{
-    from {left: 12px;}
-    to {left: -100px;}
+    from {transform: scaleY(1)}
+    to {transform: scaleY(0)}
 }
 
 @keyframes hover{
