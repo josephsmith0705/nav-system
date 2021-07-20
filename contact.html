@@ -10,6 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <style>
+        /*#contact-links{
+            position: relative;
+            top: 140px;
+            
+        }*/
+        #main-container{
+            position: static;
+            margin-top: 70px;
+            display: inline-block;
+            color: var(--main-white);      
+            z-index: 2;   
+            width: 80%; 
+        }
+        #main-container a{
+            text-decoration: none;
+            color: var(--main-white);
+        }
+        #main-container hr{
+            margin: 20px 0;
+            width: 100%;
+        }
+    </style>
 </head>
     <body>
         <!--<img src="img/icon-small.png" id="bg-img">-->
@@ -23,7 +46,6 @@
                 <a href="index.html" class="dd-navlink">home</a>
                 <a href="https://slugapparel.com/collections/blighttown-collection" target="_blank" rel="noopener" class="dd-navlink">merch</a>
                 <a href="shows.html" class="dd-navlink">shows</a> 
-                <a href="music.html" class="dd-navlink">music</a>  
                 <a href="contact.html" class="current-page dd-navlink">contact</a>  
             </nav>
             <nav id="navbar">
@@ -34,11 +56,19 @@
                     </div>
                 </a>
                 <a href="shows.html" class="navlink">shows</a>  
-                <a href="music.html" class="navlink">music</a> 
                 <a href="contact.html" class="current-page navlink">contact</a>  
             </nav>
-            
         </header>
+
+        <main id="main-container">
+            <hr>
+            <h2>Contact Us</h2>
+            <a href="mailto:blighttownuk@outlook.com">blighttownuk@outlook.com</a>
+            <hr>
+            <h2>UK/EU Bookings</h2>
+            <a href="mailto:adamconnor19@hotmail.co.uk">Adam Connor - Life Is Music</a>
+            <hr>
+        </main>
     
         <footer id="contact-links">
             <a href="https://facebook.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-facebook-square" aria-label="facebook"></a>

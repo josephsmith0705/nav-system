@@ -97,7 +97,7 @@ body {
 #header-img{
     position: relative;
     top: 21.5px;
-    margin: auto;
+    margin: 0 auto;
     height: 31px;
     display: none;
 }
@@ -125,10 +125,12 @@ body {
     top: 75px;
     padding: 5px 10px 0px 17px;
     opacity: 0;
-    z-index: 2;
+    display: none;
+    z-index: 3;
     background: black;
     width: 100%;
     transform-origin: top center;
+
 }
 
 #navbar{

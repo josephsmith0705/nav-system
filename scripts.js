@@ -6,14 +6,18 @@ const dropdown = {
 		this.button.style.transitionDuration = '0.2s';
 		this.button.style.transform = 'rotate(90deg)';
 		this.menu.style.opacity = '1';
-		this.menu.style.animation = 'drop 0.5s ease';
+		this.menu.style.display = 'block';
+		this.menu.style.animation = 'drop 0.35s ease';
 		this.hidden = false;
 	},
 	hide: function(){
 		this.button.style.transitionDuration = '0.2s';
 		this.button.style.transform = 'rotate(0deg)';
 		this.menu.style.animation = 'fold 0.2s ease-in-out';
-		setTimeout(() => {this.menu.style.opacity = '0';}, 190);
+		setTimeout(() => {
+			this.menu.style.opacity = '0';
+			this.menu.style.display = 'none';
+		}, 190);
 		this.hidden = true;
 	}
 };

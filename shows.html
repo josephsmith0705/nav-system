@@ -15,12 +15,15 @@
             width: 50%;
             margin: auto;
             position: relative;
-            top: 70px;
-            height: 500px;
-            min-width: 320px;
+            min-width: 280px;
+            
         }
         .fb-page{
             display: none;
+        }
+        body{
+            /*height: 500px;
+            background: red;*/
         }
     </style>
 </head>
@@ -51,7 +54,7 @@
             </nav>
         </header>
     
-        <div id="events-container">
+        <main id="events-container">
             <div id="events" class="fb-page" data-href="https://www.facebook.com/blighttownuk/" data-tabs="events" 
             data-width="500" data-height="1000" data-small-header="false" data-adapt-container-width="true"
             data-hide-cover="false" data-show-facepile="true">
@@ -59,7 +62,7 @@
                     <a href="https://www.facebook.com/blighttownuk/">Blight Town</a>
                 </blockquote>
             </div>
-        </div>
+        </main>
 
         <footer id="contact-links">
             <a href="https://facebook.com/blighttownuk" target="_blank" rel="noopener" class="contactlink fab fa-facebook-square" aria-label="facebook"></a>
@@ -71,8 +74,12 @@
         <script src="scripts.js"></script>
         <script>
             const events = document.getElementById('events');
-            events.setAttribute("data-height", String(window.innerHeight - 170));
+            events.setAttribute("data-height", String(window.innerHeight) - 200);
             events.setAttribute("data-width", String(document.getElementById('events-container').clientWidth));
+            document.getElementById('events-container').style.top = String((window.innerHeight - 60 - events.getAttribute('data-height')) / 2) + 'px'; //Center element vertically automatically
+            if (window.innerHeight > 1000){
+                document.getElementById('events-container').style.top = String((window.innerHeight - 800) / 2) + 'px';
+            }
             window.addEventListener('resize', e=>{document.location.href = document.location.href;});
         </script>
     </body>
